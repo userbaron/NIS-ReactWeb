@@ -17,5 +17,22 @@ export type User = {
 };
 
 export function describeUser(user: User): string {
-    throw new Error("не реализовано");
+    let describe: string = ``;
+    describe += `Пользователя зовут ${user.name}. `
+    if ('age' in user) {
+        describe += `Пользователю ${user?.age} лет. `
+    }
+    if (user.hobbies.length == 0) {
+        describe += `У пользователя нет хоббию. `
+    }
+    else {
+        describe += `Хобби пользователя: ${user.hobbies}. `
+    }
+    if ('email' in user.contact) {
+        describe += `Email пользователя - ${user.contact.email}. `;
+    }
+    if ('phone' in user.contact) {
+        describe += `Email пользователя - ${user.contact.phone}. `;
+    }
+    return describe;
 }

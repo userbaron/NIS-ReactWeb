@@ -30,5 +30,13 @@ export const defaultRules: Rules = {
 };
 
 export function validateForm(data: IFormData, rules: Rules): Errors {
-    throw new Error("не реализовано");
+    const errors: Errors = {};
+    const keys = Object.keys(rules) as Array<keyof IFormData>;
+    keys.forEach(<K extends keyof IFormData>(field: K) => {
+        if (!rules[field](data[field])) {
+            errors[field] = `Поле "${field}" имеет некорректное значение: ${data[field]}`;
+        }
+    });
+    return errors;
+    
 }
