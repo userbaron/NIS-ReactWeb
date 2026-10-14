@@ -1,4 +1,4 @@
-import { useMemo, useReducer, useState } from 'react'
+import { useCallback, useMemo, useReducer, useState } from 'react'
 import { products } from './data'
 import { cartReducer, initialCart } from './cartReducer'
 import Header from './Header'
@@ -11,6 +11,14 @@ export default function App() {
   const [cart, dispatch] = useReducer(cartReducer, initialCart)
   const totalCount = cart.items.reduce((sum, x) => sum + x.qty, 0)
   const totalPrice = cart.items.reduce((sum, x) => sum + x.price * x.qty, 0)
+  const onAdd = useCallback(product => dispatch({ type: 'add', product }), [])
+  const onRemove = useCallback(id => dispatch({ type: 'remove', id }), [])
+  const onClear = useCallback(() => dispatch({ type: 'clear' }), [])
+  const qtyById = useMemo(() => {
+    const result = {}
+    for (const item of cart.items) result[item.id] = item.qty
+    return result
+  }, [cart.items])
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -18,9 +26,9 @@ export default function App() {
   }, [query, onlyInStock])
 
   return <main>
-    <Header totalCount={totalCount} totalPrice={totalPrice} onClear={() => dispatch({ type: 'clear' })} />
+    <Header totalCount={totalCount} totalPrice={totalPrice} onClear={onClear} />
     <SearchBar query={query} onSearch={e => setQuery(e.target.value)} onlyInStock={onlyInStock} onStock={e => setOnlyInStock(e.target.checked)} />
     <p>Найдено: {visible.length}</p>
-    <ProductList products={visible} cart={cart} onAdd={product => dispatch({ type: 'add', product })} onRemove={id => dispatch({ type: 'remove', id })} />
+    <ProductList products={visible} qtyById={qtyById} onAdd={onAdd} onRemove={onRemove} />
   </main>
 }
