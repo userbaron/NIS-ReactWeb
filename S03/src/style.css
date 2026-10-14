@@ -1,0 +1,11 @@
+body { font-family: Arial, sans-serif; background: #f3f3f3; color: #222; margin: 0; }
+main { max-width: 1000px; margin: 20px auto; padding: 15px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+.search { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin: 20px 0; }
+.search > input { padding: 10px; width: 280px; }
+.products { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+article { background: white; padding: 15px; border: 1px solid #ddd; }
+h2 { font-size: 18px; }
+button { padding: 7px 12px; cursor: pointer; }
+button:disabled { cursor: default; }
+article button { margin-right: 5px; }
