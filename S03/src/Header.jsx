@@ -1,3 +1,6 @@
-export default function Header() {
-  return <header><h1>Магазин</h1></header>
+export default function Header({ totalCount, totalPrice, onClear }) {
+  return <header>
+    <h1>Магазин</h1>
+    <div><p>Корзина: {totalCount} шт. · {totalPrice} ₽</p><button onClick={onClear}>Очистить</button></div>
+  </header>
 }
