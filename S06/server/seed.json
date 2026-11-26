@@ -1,0 +1,18 @@
+{
+  "users": [
+    { "id": "1", "name": "Анна Смирнова", "email": "anna@example.com" },
+    { "id": "2", "name": "Иван Петров", "email": "ivan@example.com" },
+    { "id": "3", "name": "Мария Кузнецова", "email": "maria@example.com" },
+    { "id": "4", "name": "Алексей Волков", "email": "alexey@example.com" }
+  ],
+  "tasks": [
+    { "id": "1", "userId": "1", "title": "Подготовить макет главной страницы", "status": "todo" },
+    { "id": "2", "userId": "1", "title": "Проверить форму регистрации", "status": "doing" },
+    { "id": "3", "userId": "2", "title": "Настроить локальный API", "status": "done" },
+    { "id": "4", "userId": "2", "title": "Добавить обработку ошибок", "status": "todo" },
+    { "id": "5", "userId": "3", "title": "Написать инструкцию запуска", "status": "doing" },
+    { "id": "6", "userId": "3", "title": "Собрать список вопросов для защиты", "status": "done" },
+    { "id": "7", "userId": "4", "title": "Проверить прямые ссылки", "status": "todo" },
+    { "id": "8", "userId": "4", "title": "Протестировать фильтр задач", "status": "doing" }
+  ]
+}

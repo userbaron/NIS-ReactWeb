@@ -1,0 +1,30 @@
+body { margin: 0; background: #f3f5f8; color: #202b3d; font: 16px/1.5 Arial, sans-serif; }
+* { box-sizing: border-box; }
+main { max-width: 1000px; margin: 24px auto; padding: 20px; }
+header { margin-bottom: 24px; border-bottom: 1px solid #cbd2dd; padding-bottom: 16px; }
+h1 { margin: 0 0 12px; font-size: 28px; }
+h2, h3 { margin: 0; }
+p { margin: 10px 0; }
+a { color: #1756ac; }
+nav, .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+nav .active { font-weight: bold; }
+.subnav { margin: 16px 0; }
+button, input, select { font: inherit; padding: 8px 12px; }
+button { border: 1px solid #aab8cc; border-radius: 4px; cursor: pointer; background: white; color: #202b3d; }
+button:disabled { opacity: 0.55; cursor: default; }
+button[aria-pressed="true"] { background: #dce9fc; }
+input, select { min-width: 0; border: 1px solid #aab8cc; border-radius: 4px; background: white; color: #202b3d; }
+select { appearance: none; padding-right: 34px; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 17px) 50%, calc(100% - 12px) 50%; background-size: 5px 5px; background-repeat: no-repeat; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #3478d1; outline-offset: 2px; }
+article { padding: 16px; border: 1px solid #d2dae6; border-radius: 6px; background: white; margin: 16px 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.cards article { margin: 0; }
+.cards { margin-top: 16px; }
+.task-form { display: grid; max-width: 520px; gap: 12px; margin: 16px 0; }
+label { display: grid; gap: 5px; }
+.filter { margin: 16px 0; max-width: 240px; }
+.task-list article { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.error { color: #a3192b; padding: 12px; border: 1px solid #e7afb7; background: #fff4f5; margin: 12px 0; }
+.error p { margin-top: 0; }
+.danger { color: #a3192b; border-color: #a3192b; }
+@media (max-width: 600px) { main { margin: 0; padding: 15px; } .cards { grid-template-columns: 1fr; } }

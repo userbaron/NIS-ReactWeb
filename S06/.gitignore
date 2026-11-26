@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+.sites-runtime/
+server/db.json
+server/db.json.tmp
